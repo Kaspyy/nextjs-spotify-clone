@@ -5,6 +5,7 @@ import Searchbar from '../components/Searchbar';
 import Sidebar from '../components/Slidebar';
 import TopPlay from '../components/TopPlay';
 import { useAppSelector } from '../redux/hooks';
+import Discover from './discover';
 
 const Home: NextPage = () => {
   const { activeSong } = useAppSelector(state => state.player);
@@ -24,7 +25,7 @@ const Home: NextPage = () => {
 
           <div className='hide-scrollbar flex h-[calc(100vh-72px)] flex-col-reverse overflow-y-scroll px-6 xl:flex-row'>
             <div className='h-fit flex-1 pb-40'>
-              <h1>Discover</h1>
+              <Discover />
             </div>
             <div className='relative top-0 h-fit xl:sticky'>
               <TopPlay />
