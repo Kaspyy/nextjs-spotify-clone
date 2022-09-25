@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import MusicPlayer from '../components/MusicPlayer';
 import Searchbar from '../components/Searchbar';
-import Sidebar from '../components/Slidebar';
+import Sidebar from '../components/Sidebar';
 import TopPlay from '../components/TopPlay';
 import { useAppSelector } from '../redux/hooks';
 import Discover from './discover';
