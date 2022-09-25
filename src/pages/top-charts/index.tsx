@@ -1,4 +1,4 @@
-const topCharts = () => {
+const TopCharts = () => {
   return (
     <div>
       <h1>Top Charts</h1>
@@ -6,4 +6,4 @@ const topCharts = () => {
   );
 };
 
-export default topCharts;
+export default TopCharts;

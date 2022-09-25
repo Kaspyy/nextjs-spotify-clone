@@ -1,4 +1,4 @@
-const topArtists = () => {
+const TopArtists = () => {
   return (
     <div>
       <h1>Top Artists</h1>
@@ -6,4 +6,4 @@ const topArtists = () => {
   );
 };
 
-export default topArtists;
+export default TopArtists;
