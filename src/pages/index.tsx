@@ -24,15 +24,7 @@ const Home: NextPage = () => {
 
           <div className='hide-scrollbar flex h-[calc(100vh-72px)] flex-col-reverse overflow-y-scroll px-6 xl:flex-row'>
             <div className='h-fit flex-1 pb-40'>
-              {/* <Routes>
-                <Route path='/' element={<Discover />} />
-                <Route path='/top-artists' element={<TopArtists />} />
-                <Route path='/top-charts' element={<TopCharts />} />
-                <Route path='/around-you' element={<AroundYou />} />
-                <Route path='/artists/:id' element={<ArtistDetails />} />
-                <Route path='/songs/:songid' element={<SongDetails />} />
-                <Route path='/search/:searchTerm' element={<Search />} />
-              </Routes> */}
+              <h1>Discover</h1>
             </div>
             <div className='relative top-0 h-fit xl:sticky'>
               <TopPlay />
