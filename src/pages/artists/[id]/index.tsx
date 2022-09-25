@@ -1,5 +1,5 @@
-const artists = () => {
+const Artists = () => {
   return <div>Artists</div>;
 };
 
-export default artists;
+export default Artists;

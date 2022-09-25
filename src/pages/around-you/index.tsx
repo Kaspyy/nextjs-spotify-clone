@@ -1,5 +1,5 @@
-const aroundYou = () => {
-  return <h1>aroundYou</h1>;
+const AroundYou = () => {
+  return <h1>Around You</h1>;
 };
 
-export default aroundYou;
+export default AroundYou;

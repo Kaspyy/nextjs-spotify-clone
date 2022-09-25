@@ -1,9 +1,9 @@
-const songs = () => {
+const Songs = () => {
   return (
     <div>
-      <h1>song</h1>
+      <h1>Songs</h1>
     </div>
   );
 };
 
-export default songs;
+export default Songs;
