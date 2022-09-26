@@ -7,7 +7,17 @@ export interface Song {
   share: Share;
   subtitle: string;
   title: string;
-  type: RootObjectType;
+  url: string;
+  attributes: Attributes;
+}
+
+export interface Attributes {
+  name: string;
+  albumName: string;
+  artwork: Artwork;
+}
+
+export interface Artwork {
   url: string;
 }
 
