@@ -1,10 +1,11 @@
-import Image from 'next/image';
+import Image from 'next/future/image';
+import { Song } from 'types/types';
 
 type TrackProps = {
   // TODO: add types
   isPlaying: boolean;
   isActive: boolean;
-  activeSong: any;
+  activeSong: Song;
 };
 
 const Track = ({ isPlaying, isActive, activeSong }: TrackProps) => (
@@ -15,9 +16,10 @@ const Track = ({ isPlaying, isActive, activeSong }: TrackProps) => (
       } mr-4 hidden h-16 w-16 sm:block`}
     >
       <Image
-        src={activeSong?.images?.coverart}
+        src={`/api/imageProxy?imageUrl=${activeSong.images?.coverart}`}
         alt='cover art'
         className='rounded-full'
+        fill
       />
     </div>
     <div className='w-[50%]'>

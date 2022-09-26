@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
-
+import Image from 'next/future/image';
 import PlayPause from './PlayPause';
+import { Song } from 'types/types';
 
 type SongBarProps = {
   song: Song;
@@ -37,9 +37,10 @@ const SongBar = ({
             ? song?.attributes?.artwork?.url
                 .replace('{w}', '125')
                 .replace('{h}', '125')
-            : song?.images?.coverart
+            : `/api/imageProxy?imageUrl=${song.images?.coverart}`
         }
         alt={song?.title}
+        fill
       />
       <div className='mx-3 flex flex-1 flex-col justify-center'>
         {!artistId ? (
