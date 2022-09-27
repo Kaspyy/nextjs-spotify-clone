@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useRef, useEffect } from 'react';
 
 type PlayerProps = {
@@ -5,7 +6,6 @@ type PlayerProps = {
   activeSong: any;
   isPlaying: boolean;
   volume: number;
-  currentIndex: number;
   seekTime: number;
   onEnded: () => void;
   onTimeUpdate: (event: any) => void;
@@ -17,7 +17,6 @@ const Player = ({
   activeSong,
   isPlaying,
   volume,
-  currentIndex,
   seekTime,
   onEnded,
   onTimeUpdate,

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { MdSkipNext, MdSkipPrevious } from 'react-icons/md';
 import {
   BsArrowRepeat,
@@ -5,16 +6,16 @@ import {
   BsFillPlayFill,
   BsShuffle,
 } from 'react-icons/bs';
+import { Song } from 'types/types';
 
 type ControlsProps = {
   //TODO: add types
   isPlaying: boolean;
-  isActive: boolean;
   repeat: boolean;
   setRepeat: any;
   shuffle: boolean;
   setShuffle: any;
-  currentSongs: any;
+  currentSongs: Song[];
   handlePlayPause: () => void;
   handlePrevSong: () => void;
   handleNextSong: () => void;
@@ -22,7 +23,6 @@ type ControlsProps = {
 
 const Controls = ({
   isPlaying,
-  isActive,
   repeat,
   setRepeat,
   shuffle,

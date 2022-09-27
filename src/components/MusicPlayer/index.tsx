@@ -1,10 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import {
-  nextSong,
-  prevSong,
-  playPause,
-} from '../../redux/features/playerSlice';
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { useState, useEffect } from 'react';
+import { playPause, nextSong, prevSong } from 'redux/features/playerSlice';
+import { useAppSelector, useAppDispatch } from 'redux/hooks';
 import Controls from './Controls';
 import Player from './Player';
 import Seekbar from './Seekbar';
@@ -66,7 +62,6 @@ const MusicPlayer = () => {
       <div className='flex flex-1 flex-col items-center justify-center'>
         <Controls
           isPlaying={isPlaying}
-          isActive={isActive}
           repeat={repeat}
           setRepeat={setRepeat}
           shuffle={shuffle}
@@ -90,7 +85,6 @@ const MusicPlayer = () => {
           isPlaying={isPlaying}
           seekTime={seekTime}
           repeat={repeat}
-          currentIndex={currentIndex}
           onEnded={handleNextSong}
           onTimeUpdate={event => setAppTime(event.target.currentTime)}
           onLoadedData={event => setDuration(event.target.duration)}

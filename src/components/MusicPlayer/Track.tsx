@@ -5,7 +5,7 @@ type TrackProps = {
   // TODO: add types
   isPlaying: boolean;
   isActive: boolean;
-  activeSong: Song;
+  activeSong: Song | Record<string, never> | undefined;
 };
 
 const Track = ({ isPlaying, isActive, activeSong }: TrackProps) => (
@@ -16,10 +16,11 @@ const Track = ({ isPlaying, isActive, activeSong }: TrackProps) => (
       } mr-4 hidden h-16 w-16 sm:block`}
     >
       <Image
-        src={`/api/imageProxy?imageUrl=${activeSong.images?.coverart}`}
+        src={`/api/imageProxy?imageUrl=${activeSong?.images?.coverart}`}
         alt='cover art'
         className='rounded-full'
-        fill
+        width={64}
+        height={64}
       />
     </div>
     <div className='w-[50%]'>
