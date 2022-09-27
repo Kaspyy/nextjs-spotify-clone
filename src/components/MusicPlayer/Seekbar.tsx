@@ -2,7 +2,7 @@ type SeekbarProps = {
   value: number;
   min: string;
   max: number;
-  onInput: (event: any) => void;
+  onInput: () => void;
   setSeekTime: (time: number) => void;
   appTime: number;
 };

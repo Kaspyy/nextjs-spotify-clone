@@ -1,15 +1,14 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useRef, useEffect } from 'react';
+import { Song } from 'types/types';
 
 type PlayerProps = {
-  //TODO: add types
-  activeSong: any;
+  activeSong: Song;
   isPlaying: boolean;
   volume: number;
   seekTime: number;
   onEnded: () => void;
-  onTimeUpdate: (event: any) => void;
-  onLoadedData: (event: any) => void;
+  onTimeUpdate: () => void;
+  onLoadedData: () => void;
   repeat: boolean;
 };
 

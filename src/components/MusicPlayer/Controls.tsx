@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { MdSkipNext, MdSkipPrevious } from 'react-icons/md';
 import {
   BsArrowRepeat,
@@ -9,12 +8,11 @@ import {
 import { Song } from 'types/types';
 
 type ControlsProps = {
-  //TODO: add types
   isPlaying: boolean;
   repeat: boolean;
-  setRepeat: any;
+  setRepeat: (repeat: boolean) => boolean;
   shuffle: boolean;
-  setShuffle: any;
+  setShuffle: (shuffle: boolean) => boolean;
   currentSongs: Song[];
   handlePlayPause: () => void;
   handlePrevSong: () => void;
@@ -36,7 +34,7 @@ const Controls = ({
     <BsArrowRepeat
       size={20}
       color={repeat ? 'red' : 'white'}
-      onClick={() => setRepeat((prev: boolean) => !prev)}
+      onClick={() => setRepeat(!repeat)}
       className='hidden cursor-pointer sm:block'
     />
     {currentSongs?.length && (
@@ -73,7 +71,7 @@ const Controls = ({
     <BsShuffle
       size={20}
       color={shuffle ? 'red' : 'white'}
-      onClick={() => setShuffle((prev: boolean) => !prev)}
+      onClick={() => setShuffle(!shuffle)}
       className='hidden cursor-pointer sm:block'
     />
   </div>

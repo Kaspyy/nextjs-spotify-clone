@@ -9,8 +9,7 @@ export interface Song {
   title: string;
   url: string;
   attributes: Attributes;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  track: any;
+  track: Song;
 }
 
 export interface Attributes {

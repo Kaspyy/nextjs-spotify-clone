@@ -2,7 +2,6 @@ import Image from 'next/future/image';
 import { Song } from 'types/types';
 
 type TrackProps = {
-  // TODO: add types
   isPlaying: boolean;
   isActive: boolean;
   activeSong: Song | Record<string, never> | undefined;
