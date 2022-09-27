@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Song } from 'types/types';
+import { Song } from '../../types/types';
 
 interface PlayerState {
   currentSongs: Song[];
   currentIndex: number;
   isActive: boolean;
   isPlaying: boolean;
-  activeSong?: Song | Record<string, never>;
+  activeSong: Song | Record<string, never> | undefined;
   genreListId: string;
 }
 
@@ -24,6 +24,7 @@ const playerSlice = createSlice({
   initialState,
   reducers: {
     setActiveSong: (state, action) => {
+      console.log('setActiveSong', action.payload);
       state.activeSong = action.payload.song;
 
       if (action.payload?.data?.tracks?.hits) {
@@ -34,19 +35,27 @@ const playerSlice = createSlice({
         state.currentSongs = action.payload.data;
       }
 
-      state.currentIndex = action.payload.i;
+      state.currentIndex = action.payload.index;
       state.isActive = true;
     },
 
     nextSong: (state, action) => {
-      state.activeSong = state.currentSongs[action.payload];
+      if (state.currentSongs[action.payload]?.track) {
+        state.activeSong = state.currentSongs[action.payload]?.track;
+      } else {
+        state.activeSong = state.currentSongs[action.payload];
+      }
 
       state.currentIndex = action.payload;
       state.isActive = true;
     },
 
     prevSong: (state, action) => {
-      state.activeSong = state.currentSongs[action.payload];
+      if (state.currentSongs[action.payload]?.track) {
+        state.activeSong = state.currentSongs[action.payload]?.track;
+      } else {
+        state.activeSong = state.currentSongs[action.payload];
+      }
 
       state.currentIndex = action.payload;
       state.isActive = true;
