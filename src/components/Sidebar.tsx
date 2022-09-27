@@ -9,12 +9,11 @@ import { HiOutlineMenu } from 'react-icons/hi';
 const NavLinks = ({ handleClick }: { handleClick?: () => void }) => (
   <div className='mt-10'>
     {links.map(link => (
-      <Link
-        href={link.url}
-        key={link.title}
-        onClick={() => handleClick && handleClick()}
-      >
-        <a className='my-8 flex flex-row items-center justify-start text-sm font-medium text-gray-400 hover:text-cyan-400'>
+      <Link href={link.url} key={link.title}>
+        <a
+          className='my-8 flex flex-row items-center justify-start text-sm font-medium text-gray-400 hover:text-cyan-400'
+          onClick={() => handleClick && handleClick()}
+        >
           <link.icon className='mr-2 h-6 w-6' />
           {link.title}
         </a>
