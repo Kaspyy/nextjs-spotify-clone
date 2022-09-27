@@ -8,7 +8,7 @@ type VolumeBarProps = {
   value: number;
   min: string;
   max: string;
-  onChange: (event: any) => void;
+  onChange: () => void;
   setVolume: (volume: number) => void;
 };
 
