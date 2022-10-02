@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { Song } from 'types/types';
+import { Song, SongData } from 'types/types';
 
 export const shazamCoreApi = createApi({
   reducerPath: 'shazamCoreApi',
@@ -17,7 +17,17 @@ export const shazamCoreApi = createApi({
     getTopCharts: builder.query<Song[], void>({
       query: () => '/charts/world',
     }),
+    getSongDetails: builder.query<SongData, string>({
+      query: songid => `/tracks/details?track_id=${songid}`,
+    }),
+    getSongRelated: builder.query<Song[], string>({
+      query: songid => `/tracks/related?track_id=${songid}`,
+    }),
   }),
 });
 
-export const { useGetTopChartsQuery } = shazamCoreApi;
+export const {
+  useGetTopChartsQuery,
+  useGetSongDetailsQuery,
+  useGetSongRelatedQuery,
+} = shazamCoreApi;

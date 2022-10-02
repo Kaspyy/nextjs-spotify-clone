@@ -6,17 +6,17 @@ import { Song } from 'types/types';
 
 type SongBarProps = {
   song: Song;
-  i: number;
+  index: number;
   artistId: string;
   isPlaying: boolean;
-  activeSong: Song;
+  activeSong: Song | Record<string, never> | undefined;
   handlePauseClick: () => void;
-  handlePlayClick: (song: Song, i: number) => void;
+  handlePlayClick: (song: Song, index: number) => void;
 };
 
 const SongBar = ({
   song,
-  i,
+  index,
   artistId,
   isPlaying,
   activeSong,
@@ -28,7 +28,7 @@ const SongBar = ({
       activeSong?.title === song?.title ? 'bg-[#4c426e]' : 'bg-transparent'
     } mb-2 cursor-pointer rounded-lg p-4 py-2`}
   >
-    <h3 className='mr-3 text-base font-bold text-white'>{i + 1}.</h3>
+    <h3 className='mr-3 text-base font-bold text-white'>{index + 1}.</h3>
     <div className='flex flex-1 flex-row items-center justify-between'>
       <Image
         className='h-20 w-20 rounded-lg'
@@ -40,7 +40,8 @@ const SongBar = ({
             : `/api/imageProxy?imageUrl=${song.images?.coverart}`
         }
         alt={song?.title}
-        fill
+        height={125}
+        width={125}
       />
       <div className='mx-3 flex flex-1 flex-col justify-center'>
         {!artistId ? (
@@ -63,7 +64,7 @@ const SongBar = ({
         activeSong={activeSong}
         song={song}
         handlePause={handlePauseClick}
-        handlePlay={() => handlePlayClick(song, i)}
+        handlePlay={() => handlePlayClick(song, index)}
       />
     ) : null}
   </div>

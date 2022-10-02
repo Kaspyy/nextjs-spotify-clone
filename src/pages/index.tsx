@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { useAppSelector } from 'redux/hooks';
 import MusicPlayer from '../components/MusicPlayer';
 import Searchbar from '../components/Searchbar';
@@ -7,8 +8,11 @@ import Sidebar from '../components/Sidebar';
 import TopPlay from '../components/TopPlay';
 
 import Discover from './discover';
+import SongDetails from './songs/[songId]';
 
 const Home: NextPage = () => {
+  const router = useRouter();
+  const { songId } = router.query;
   const { activeSong } = useAppSelector(state => state.player);
 
   return (
@@ -26,7 +30,7 @@ const Home: NextPage = () => {
 
           <div className='hide-scrollbar flex h-[calc(100vh-72px)] flex-col-reverse overflow-y-scroll px-6 xl:flex-row'>
             <div className='h-fit flex-1 pb-40'>
-              <Discover />
+              {songId ? <SongDetails /> : <Discover />}
             </div>
             <div className='relative top-0 h-fit xl:sticky'>
               <TopPlay />

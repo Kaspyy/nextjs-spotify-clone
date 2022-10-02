@@ -29,4 +29,12 @@ export default defineNextConfig({
       },
     ];
   },
+  rewrites() {
+    return [
+      {
+        source: '/songs/:songId',
+        destination: '/',
+      },
+    ];
+  },
 });
