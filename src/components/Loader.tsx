@@ -12,7 +12,8 @@ const Loader = ({ title }: LoaderProps) => {
         src={loader}
         alt='loader'
         className='h-32 w-32 object-contain'
-        layout='fill'
+        width={200}
+        height={200}
       />
       <h1 className='mt-2 text-2xl font-bold text-white'>
         {title || 'Loading...'}
