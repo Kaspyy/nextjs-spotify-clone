@@ -22,10 +22,7 @@ const ArtistDetails = () => {
       <DetailsHeader artistId={artistId} artistData={artistData} />
 
       <RelatedSongs
-        data={Object.entries(artistData?.songs ?? {}).map(([key, value]) => ({
-          ...value,
-          key,
-        }))}
+        data={Object.values(artistData?.songs ?? {})}
         activeSong={activeSong}
         isPlaying={isPlaying}
         artistId={artistId as string}
