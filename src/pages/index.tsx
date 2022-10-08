@@ -9,10 +9,11 @@ import TopPlay from '../components/TopPlay';
 
 import Discover from './discover';
 import SongDetails from './songs/[songId]';
+import ArtistDetails from './artist/[id]';
 
 const Home: NextPage = () => {
   const router = useRouter();
-  const { songId } = router.query;
+  const { songId, artistId } = router.query;
   const { activeSong } = useAppSelector(state => state.player);
 
   return (
@@ -30,7 +31,9 @@ const Home: NextPage = () => {
 
           <div className='hide-scrollbar flex h-[calc(100vh-72px)] flex-col-reverse overflow-y-scroll px-6 xl:flex-row'>
             <div className='h-fit flex-1 pb-40'>
-              {songId ? <SongDetails /> : <Discover />}
+              {songId && <SongDetails />}
+              {artistId && <ArtistDetails />}
+              {!songId && !artistId && <Discover />}
             </div>
             <div className='relative top-0 h-fit xl:sticky'>
               <TopPlay />
