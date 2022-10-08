@@ -10,8 +10,8 @@ type SongBarProps = {
   artistId: string;
   isPlaying: boolean;
   activeSong: Song | Record<string, never> | undefined;
-  handlePauseClick: () => void;
-  handlePlayClick: (song: Song, index: number) => void;
+  handlePauseClick?: () => void | undefined;
+  handlePlayClick?: (song: Song, index: number) => void;
 };
 
 const SongBar = ({
@@ -32,13 +32,13 @@ const SongBar = ({
     <div className='flex flex-1 flex-row items-center justify-between'>
       <Image
         className='h-20 w-20 rounded-lg'
-        src={
+        src={`/api/imageProxy?imageUrl=${
           artistId
             ? song?.attributes?.artwork?.url
                 .replace('{w}', '125')
                 .replace('{h}', '125')
-            : `/api/imageProxy?imageUrl=${song.images?.coverart}`
-        }
+            : song.images?.coverart
+        }`}
         alt={song?.title}
         height={125}
         width={125}
@@ -64,7 +64,7 @@ const SongBar = ({
         activeSong={activeSong}
         song={song}
         handlePause={handlePauseClick}
-        handlePlay={() => handlePlayClick(song, index)}
+        handlePlay={() => handlePlayClick?.(song, index)}
       />
     ) : null}
   </div>

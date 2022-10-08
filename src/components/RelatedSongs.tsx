@@ -6,8 +6,8 @@ type RelatedSongsProps = {
   activeSong: Song | Record<string, never> | undefined;
   isPlaying: boolean;
   artistId: string;
-  handlePauseClick: () => void;
-  handlePlayClick: (song: Song, index: number) => void;
+  handlePauseClick?: () => void;
+  handlePlayClick?: (song: Song, index: number) => void;
 };
 
 const RelatedSongs = ({

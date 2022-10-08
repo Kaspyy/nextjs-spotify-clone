@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { ArtistData, SongData } from 'types/types';
 
 type DetailsHeaderProps = {
-  artistId: string;
-  songData: SongData | undefined;
+  artistId: string | string[] | undefined;
+  songData?: SongData | undefined;
   artistData?: ArtistData;
 };
 
@@ -36,7 +36,7 @@ const DetailsHeader = ({
             {artistId ? artist?.name : songData?.title}
           </p>
           {!artistId && (
-            <Link href={`/artists/${songData?.artists[0]?.adamid}`}>
+            <Link href={`/artist/${songData?.artists[0]?.adamid}`}>
               <p className='mt-2 text-base text-gray-400'>
                 {songData?.subtitle}
               </p>

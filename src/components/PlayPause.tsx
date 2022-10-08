@@ -3,8 +3,8 @@ import { Song } from 'types/types';
 
 type PlayPauseProps = {
   song: Song;
-  handlePause: () => void;
-  handlePlay: () => void;
+  handlePause?: () => void;
+  handlePlay?: () => void;
   isPlaying: boolean;
   activeSong: Song | Record<string, never> | undefined;
 };
