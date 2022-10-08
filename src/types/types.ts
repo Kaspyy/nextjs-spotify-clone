@@ -1,5 +1,3 @@
-import { type } from 'os';
-
 export interface Song {
   artists: Artist[];
   hub: Hub;
@@ -167,7 +165,7 @@ export interface Urlparams {
 export interface ArtistData {
   albums: { [key: string]: Album };
   artists: Artists[];
-  songs: { [key: string]: Song };
+  songs: Song[];
 }
 
 export interface Album {
