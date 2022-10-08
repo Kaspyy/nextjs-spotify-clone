@@ -35,6 +35,10 @@ export default defineNextConfig({
         source: '/songs/:songId',
         destination: '/',
       },
+      {
+        source: '/artist/:artistId',
+        destination: '/',
+      },
     ];
   },
 });
