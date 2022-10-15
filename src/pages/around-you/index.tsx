@@ -1,5 +1,9 @@
 const AroundYou = () => {
-  return <h1>Around You</h1>;
+  return (
+    <div>
+      <h1>Around You</h1>
+    </div>
+  );
 };
 
 export default AroundYou;
