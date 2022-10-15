@@ -1,9 +1,11 @@
 import { DetailsHeader, Error, Loader, RelatedSongs } from 'components';
 import { useRouter } from 'next/router';
+import { NextPageWithLayout } from 'pages/_app';
 import { useAppSelector } from 'redux/hooks';
 import { useGetArtistDetailsQuery } from 'redux/services/shazamCore';
+import Layout from 'components/Layout';
 
-const ArtistDetails = () => {
+const ArtistDetails: NextPageWithLayout = () => {
   const router = useRouter();
   const { artistId } = router.query;
   const { activeSong, isPlaying } = useAppSelector(state => state.player);
@@ -29,6 +31,10 @@ const ArtistDetails = () => {
       />
     </div>
   );
+};
+
+ArtistDetails.getLayout = function getLayout(page: React.ReactNode) {
+  return <Layout>{page}</Layout>;
 };
 
 export default ArtistDetails;
