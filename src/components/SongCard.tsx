@@ -64,7 +64,7 @@ const SongCard = ({
           <Link
             href={
               song.artists
-                ? `/artist/${song.artists[0]?.adamid}`
+                ? `/artists/${song.artists[0]?.adamid}`
                 : '/top-artists'
             }
           >
