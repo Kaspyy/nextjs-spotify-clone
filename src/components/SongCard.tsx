@@ -1,4 +1,4 @@
-import { Song } from 'types/types';
+import { SearchQueryResponse, Song, Track } from 'types/types';
 import Link from 'next/link';
 import { useAppDispatch } from 'redux/hooks';
 import PlayPause from 'components/PlayPause';
@@ -6,11 +6,11 @@ import { playPause, setActiveSong } from 'redux/features/playerSlice';
 import Image from 'next/future/image';
 
 type SongCardProps = {
-  song: Song;
+  song: Song | Track;
   index: number;
   isPlaying: boolean;
   activeSong: Song | Record<string, never> | undefined;
-  data: Song[];
+  data: Song[] | SearchQueryResponse | undefined;
 };
 
 const SongCard = ({

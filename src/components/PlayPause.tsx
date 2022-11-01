@@ -1,8 +1,8 @@
 import { FaPauseCircle, FaPlayCircle } from 'react-icons/fa';
-import { Song } from 'types/types';
+import { Song, Track } from 'types/types';
 
 type PlayPauseProps = {
-  song: Song;
+  song: Song | Track;
   handlePause?: () => void;
   handlePlay?: () => void;
   isPlaying: boolean;
