@@ -7,13 +7,15 @@ import Layout from 'components/Layout';
 
 const ArtistDetails: NextPageWithLayout = () => {
   const router = useRouter();
-  const { artistId } = router.query;
+  const { id } = router.query;
   const { activeSong, isPlaying } = useAppSelector(state => state.player);
   const {
     data: artistData,
     isFetching: isFetchingArtistDetails,
     error,
-  } = useGetArtistDetailsQuery(artistId as string);
+  } = useGetArtistDetailsQuery(id as string);
+
+  console.log(artistData);
 
   if (isFetchingArtistDetails) return <Loader title='Loading artist details' />;
 
@@ -21,13 +23,13 @@ const ArtistDetails: NextPageWithLayout = () => {
 
   return (
     <div className='flex flex-col'>
-      <DetailsHeader artistId={artistId} artistData={artistData} />
+      <DetailsHeader artistId={id} artistData={artistData} />
 
       <RelatedSongs
         data={Object.values(artistData?.songs ?? {})}
         activeSong={activeSong}
         isPlaying={isPlaying}
-        artistId={artistId as string}
+        artistId={id as string}
       />
     </div>
   );

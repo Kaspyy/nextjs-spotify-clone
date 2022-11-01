@@ -1,4 +1,3 @@
-import { Song } from 'types/types';
 import { ArtistCard, Loader, Error } from 'components';
 import { useGetTopChartsQuery } from 'redux/services/shazamCore';
 import { NextPageWithLayout } from 'pages/_app';
