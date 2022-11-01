@@ -279,3 +279,29 @@ export interface AlbumsData {
   id: string;
   type: Type;
 }
+
+export interface SearchQueryResponse {
+  tracks: Tracks;
+  artists: Artists;
+}
+
+export interface Tracks {
+  hits: Hit[];
+}
+
+export interface Hit {
+  track: Track;
+}
+
+export interface Track {
+  layout: string;
+  type: string;
+  key: string;
+  title: string;
+  subtitle: string;
+  share: Share;
+  images: Images;
+  hub: Hub;
+  artists: Artist[];
+  url: string;
+}
