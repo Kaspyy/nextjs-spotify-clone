@@ -5,8 +5,8 @@ This app is a Next.js variation of [JavaScript Mastery Lyriks project](https://y
 Configure `.env` file with your credentials. You can obtain them from [RapidApi](https://rapidapi.com/tipsters/api/shazam-core)
 
 ```
-NEXT_PUBLIC_SHAZAM_CORE_RAPID_API_KEY=cd3063060emsh3529c2ad82157e6p1c551bjsn7eefa79b5f50
-NEXT_PUBLIC_GEO_API_KEY=at_Ie0W9ta2xIBSAbNtzG09jAgKXa93s
+NEXT_PUBLIC_SHAZAM_CORE_RAPID_API_KEY=<shazam-core-rapid-api-key>
+NEXT_PUBLIC_GEO_API_KEY=<public-geo-api-key>
 ```
 
 In project's main directory run
