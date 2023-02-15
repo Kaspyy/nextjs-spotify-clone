@@ -8,7 +8,7 @@ type VolumeBarProps = {
   value: number;
   min: string;
   max: string;
-  onChange: () => void;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   setVolume: (volume: number) => void;
 };
 

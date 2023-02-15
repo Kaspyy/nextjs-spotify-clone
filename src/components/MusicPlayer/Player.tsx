@@ -2,13 +2,13 @@ import { useRef, useEffect } from 'react';
 import { Song } from 'types/types';
 
 type PlayerProps = {
-  activeSong: Song;
+  activeSong: Song | Record<string, never> | undefined;
   isPlaying: boolean;
   volume: number;
   seekTime: number;
   onEnded: () => void;
-  onTimeUpdate: () => void;
-  onLoadedData: () => void;
+  onTimeUpdate: React.ReactEventHandler<HTMLMediaElement>;
+  onLoadedData: React.ReactEventHandler<HTMLMediaElement>;
   repeat: boolean;
 };
 
