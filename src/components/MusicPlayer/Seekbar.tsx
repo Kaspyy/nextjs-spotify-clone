@@ -2,7 +2,7 @@ type SeekbarProps = {
   value: number;
   min: string;
   max: number;
-  onInput: () => void;
+  onInput: React.FormEventHandler<HTMLInputElement>;
   setSeekTime: (time: number) => void;
   appTime: number;
 };
@@ -15,7 +15,6 @@ const Seekbar = ({
   setSeekTime,
   appTime,
 }: SeekbarProps) => {
-  // converts the time to format 0:00
   const getTime = (time: number) =>
     `${Math.floor(time / 60)}:${`0${Math.floor(time % 60)}`.slice(-2)}`;
 

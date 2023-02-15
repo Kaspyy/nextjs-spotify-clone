@@ -10,9 +10,9 @@ import { Song } from 'types/types';
 type ControlsProps = {
   isPlaying: boolean;
   repeat: boolean;
-  setRepeat: (repeat: boolean) => boolean;
+  setRepeat: (repeat: boolean) => boolean | void;
   shuffle: boolean;
-  setShuffle: (shuffle: boolean) => boolean;
+  setShuffle: (shuffle: boolean) => boolean | void;
   currentSongs: Song[];
   handlePlayPause: () => void;
   handlePrevSong: () => void;
