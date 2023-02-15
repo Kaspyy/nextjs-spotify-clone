@@ -21,3 +21,11 @@ npm run dev
 - [TailwindCSS](https://tailwindcss.com/)
 - [Redux](https://redux.js.org/)
 - [TypeScript](https://www.typescriptlang.org/)
+
+## Preview
+<img width="1292" alt="image" src="https://user-images.githubusercontent.com/50270928/219124557-5f41afc6-b3a7-4532-8a9d-a37618631a9d.png">
+<img width="1437" alt="image" src="https://user-images.githubusercontent.com/50270928/219127289-083f5077-2a9a-47e1-b605-d4ca3bdccd5a.png">
+<img width="1435" alt="image" src="https://user-images.githubusercontent.com/50270928/219127132-c54aba93-8d5d-436b-8be4-a1427dd8d846.png">
+<img width="1433" alt="image" src="https://user-images.githubusercontent.com/50270928/219127487-453dc1d7-8219-4d0d-8195-63e076e444e6.png">
+
+
